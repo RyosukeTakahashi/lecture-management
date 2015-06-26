@@ -6,14 +6,14 @@ function onOpen(){
               ];
   ss.addMenu('追加機能一覧', menus);
 }
- //昨日実施された
+//昨日実施された
 //予定を日付、時刻でソートするメソッド
 function sortSchedule(){
   var ssSchedule = SpreadsheetApp.getActive(); //アクティブなスプレッドシート全体（ss）を読み込む
   var sheetSchedule = ssSchedule.getSheets()[0];//[0]番目のシート単体を読む
   var queryCell = sheetSchedule.getRange("K1")//Queryを書くセル
   var lastRow = sheetSchedule.getLastRow();//入力があるセルの内の最後の行の行数を取得
-  講義数のカウント
+  
   //Formから送信されたデータが記入されるRangeがあるが、そのRangeはソートなどが仕様上できない。
   //そのため、一度データを隣接したRangeに移動し、Queryを使ってソートする。
   //そしてソートされた内容を、Formから送信されたデータが記入されるRangeに上書きする。
